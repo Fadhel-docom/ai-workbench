@@ -41,7 +41,13 @@ The Electron desktop app is not supported in Termux; use the headless server and
 - Use OmniRoute's official dashboard/configuration flow for provider keys.
 - Do not paste secrets into chat or terminal commands that may be saved in shell history.
 
-## 4. Free Claude Code (FCC) status
+## 4. Native Claude Code on Termux (separate option)
+
+A community-maintained project, [claude-code-android](https://github.com/ferrumclaudepilgrim/claude-code-android), documents running Anthropic's Linux ARM64 Claude Code binary on aarch64 Termux using glibc-runner. This is not an Anthropic-supported Android installation. Its installer downloads a large binary and installs additional packages; inspect the current script and project security notes before deciding whether to use it.
+
+This route still requires a legitimate Claude subscription or Anthropic Console/API access. It does not unlock Claude Pro for free and does not make an official Claude login reusable through OmniRoute. Prefer the official Claude Code installation path on a supported OS where possible.
+
+## 5. Free Claude Code (FCC) status
 
 FCC's upstream README currently documents an installer for macOS/Linux and Windows, not a confirmed Termux/Android native install. The current upstream `pyproject.toml` pins Python to exactly `3.14.10`; its dependency set includes native packages (for example `grpcio` and `tiktoken`). Termux/Android wheel and build compatibility is therefore unverified and may fail even though Termux has Python and `uv`. Do not run the installer blindly or assume that a generic Linux install path works on Android.
 
@@ -50,6 +56,6 @@ Do not run the upstream install command blindly on Android. First inspect the cu
 
 If FCC is not supported in Termux, use a compatible Linux/cloud environment or another client supported by OmniRoute. Do not assume that setting an API base URL alone completes setup; the client must support the provider protocol and authentication.
 
-## 5. Working with several repositories
+## 6. Working with several repositories
 
 Use GitHub's mobile app/browser to open the desired project repository, then use a supported coding environment to clone that project's repository. This workbench is a registry and guide, not a monorepo for all project code.
