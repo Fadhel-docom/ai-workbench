@@ -43,7 +43,7 @@ The Electron desktop app is not supported in Termux; use the headless server and
 
 ## 4. Free Claude Code (FCC) status
 
-FCC's upstream README currently documents an installer for macOS/Linux and Windows, not a confirmed Termux/Android native install. Its shell installer may depend on components unavailable or incompatible in Android's environment.
+FCC's upstream README currently documents an installer for macOS/Linux and Windows, not a confirmed Termux/Android native install. The current upstream `pyproject.toml` pins Python to exactly `3.14.10`; its dependency set includes native packages (for example `grpcio` and `tiktoken`). Termux/Android wheel and build compatibility is therefore unverified and may fail even though Termux has Python and `uv`. Do not run the installer blindly or assume that a generic Linux install path works on Android.
 
 Do not run the upstream install command blindly on Android. First inspect the current upstream installer and verify Termux compatibility:
 [Free Claude Code README](https://github.com/Alishahryar1/free-claude-code)
